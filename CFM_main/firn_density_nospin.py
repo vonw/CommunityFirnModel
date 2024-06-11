@@ -547,7 +547,7 @@ class FirnDensityNoSpin:
                 self.rhos0      = Rsf(self.modeltime) # surface density interpolated to model time
             
             elif ((self.c['srho_type']=='param') or ((self.c['srho_type']=='KM15'))):
-                self.rhos0      = 481.0 + 4.834 * (self.T_av - T_MELT) # Kuipers Munneke, 2015
+                self.rhos0      = 481.0 + 4.834 * (self.T_mean - T_MELT) # Kuipers Munneke, 2015, this is a rolling mean for Temperature
 
             elif (self.c['srho_type']=='Brils22'):
                 mtdf = pd.DataFrame({'dectime':self.modeltime,'Ts':self.Ts})
